@@ -8,10 +8,8 @@ function createInputField(containerId, type, labelText, placeholder, isRequired,
   const fieldId = `${type}${counter}`;
   const errorId = `${fieldId}Error`;
 
-
   const fieldWrapper = document.createElement('div');
   fieldWrapper.classList.add('field-entry');
-
   
   fieldWrapper.innerHTML = `
     <div class="custom-form">
@@ -43,10 +41,8 @@ function createInputField(containerId, type, labelText, placeholder, isRequired,
     return;
   }
 
-
   inputEl.addEventListener('blur', () => validateField(inputEl, errorEl, labelText));
   inputEl.addEventListener('input', () => validateField(inputEl, errorEl, labelText));
-
  
   if (type === 'email') {
     inputEl.addEventListener('blur', () => validateEmail(inputEl, errorEl));

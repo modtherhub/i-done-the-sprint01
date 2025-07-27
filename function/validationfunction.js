@@ -1,6 +1,3 @@
-// ==================================
-// Validation Functions
-// ==================================
 function showError(input, errorEl, message) {
     if (!errorEl) {
       console.error('Error element not found for:', input);
@@ -102,18 +99,6 @@ function setupSelectValidation() {
     selectEl.addEventListener('blur', validate);
   });
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 function validateFile(inputEl, errorEl, allowedTypes) {
     if (!inputEl || !errorEl) {

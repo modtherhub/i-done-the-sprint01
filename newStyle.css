@@ -165,6 +165,23 @@ h5{
   position: relative;
 }
 
+.error {
+    display: none;
+    color: red;
+    font-size: 0.8rem;
+    padding-inline: 5px;
+}
+ 
+
+ .group.invalid select {
+  border: 1px solid red;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+  display: none;
+}
 
 .features-list {
   max-height: 0;

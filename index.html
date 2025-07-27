@@ -56,7 +56,7 @@
     
     <div class="form-section">
         
-        <form>
+        <form id="Application">
             <h1>Clinic Application</h1>
             <h2>Owner Information</h2>
 
@@ -146,10 +146,11 @@
 
             <label for="gender">Gender</label>
             <select
+            id="gender"
                 data-select 
                 data-error="genderError" 
                 data-label="Gender"
-                id="gender" required
+                required
             >
                 <option value="">-- Select Gender --</option>
                 <option value="male">Male</option> 
@@ -159,10 +160,11 @@
 
             <label for="onwershipType">OwnerShip Type</label>
             <select
+                name="onwershipType" 
+                id="onwershipType" 
                 data-select 
                 data-error="ownershipError" 
                 data-label="Ownership Type"
-                name="" id="onwershipType" 
                 required
             >
                 <option value="">-- select your Facility type --</option>
