@@ -1,0 +1,236 @@
+* {
+      box-sizing: border-box;
+      font-family: 'Ubuntu', sans-serif;
+      
+}
+
+body {
+  margin: 0;   /* فقط لإزالة الهوامش الافتراضية لجسم الصفحة */
+}
+
+.container {
+      display: flex;
+      min-height: 100vh;
+     padding: 0;  /* تأكد أن لا يوجد padding */
+  margin: 0;   
+}
+
+.image-section {
+  margin: 0;
+  padding-top: 28px;
+  padding-left: 120px;
+  flex: 1;
+  background: url('/v870-mynt-06.jpg') center/cover no-repeat;
+}
+
+.form-section {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+}
+
+form {
+      width: 100%;
+      max-width: 400px;
+}
+
+    /* For tablets and phones */
+@media (max-width: 1024px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .image-section {
+        padding-left: 60px;
+        height: 30vh; /* take 30% of height */
+        min-height: 200px;
+        max-height: 100vh; /* allow image to grow if needed */
+      }
+
+      .form-section {
+        padding: 1.5rem;
+      }
+}
+
+@media (max-width: 480px) {
+      .image-section {
+        height: auto;
+        min-height: 200px;
+      }
+
+      .form-section {
+        padding: 1rem;
+      }
+}
+
+.addButton {
+    display: block;
+    background-color: #50C778;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.addButton:hover {
+  background-color: #37AD5F; /* لون أغمق عند التحويم */
+}
+
+
+.removeBtn {
+  background-color: #afafaf; 
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 26px;
+   /* المساحة السفلية */
+  transition: background-color 0.3s ease;
+}
+
+.removeBtn:hover{
+    background-color:  #4A4A4A ;
+}
+
+.submitBut{
+    width: 100%;
+  padding: 10px;
+  background-image: linear-gradient(to right, #2999CF, #9A62E8);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  margin-top: 26px;
+}
+
+
+label:not(.custom-form label) {
+  display: block;
+  margin-top: 16px;
+  margin-bottom: 6px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+ select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  font-size: 14px;
+  width: 100%;
+}
+
+ select:focus {
+  border-color: #333;
+  outline: none;
+  
+}
+
+input:not(.group input){
+  max-width: 420px;
+  width: 100%;
+  padding: 8px;
+  height: 40px;
+  margin-top: 6px;
+  box-sizing: border-box;
+  border: 1px solid rgb(99, 97, 97);
+  border-radius: 50px;
+}
+
+.divider {
+  border: none;
+  height: .5px;
+  background-color: #ccc; /* أو أي لون تريده */
+  width: 80%;
+  margin: 2rem auto; /* وسط الصفحة مع مسافة */
+}
+
+
+h5{
+    margin-top: 28px;
+}
+
+.error {
+  color: red;
+  font-size: 13px;
+  margin-top: 4px;
+  display: none;
+  position: relative;
+}
+
+
+.features-list {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease;
+  opacity: 0;
+  transition: max-height 0.6s ease, opacity 0.6s ease;
+}
+
+.features-list.active {
+    max-height: 1000px; /* قيمة كبيرة كافية لاحتواء المحتوى */
+    opacity: 1;
+}
+
+.features-list.visible {
+  max-height: 800px; 
+  opacity: 1;
+}
+
+.features-section p {
+  font-size: .8em;
+}
+
+.features-section button {
+  background-color: transparent;
+  color: black;
+  border: none;
+  cursor: pointer;
+}
+
+.features-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.features-list li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 12px;
+}
+
+.features-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: black;
+  font-weight: bold;
+}
+
+.features-list span{
+  font-size: .8em;
+}
+
+#toggleFeaturesBtn {
+  display: inline-flex;
+  align-items: center; 
+  gap: 6px;
+}
+
+.chevron {
+  transition: transform 0.3s ease;
+  vertical-align: middle;
+}
+
+/* عند الفتح */
+.chevron.rotate {
+  transform: rotate(180deg);
+}

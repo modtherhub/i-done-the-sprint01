@@ -1,0 +1,326 @@
+* {
+      box-sizing: border-box;
+    
+      font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+      
+ }
+
+.container {
+      display: flex;
+      min-height: 100vh;
+}
+
+.image-section {
+      flex: 1;
+      background: url('/v870-mynt-06.jpg') center/cover no-repeat;
+}
+
+.form-section {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+}
+
+form {
+      width: 100%;
+      max-width: 400px;
+}
+
+form input, form button {
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+    /* For tablets and phones */
+@media (max-width: 1024px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .image-section {
+        height: 30vh; /* take 30% of height */
+        min-height: 200px;
+        max-height: 100vh; /* allow image to grow if needed */
+      }
+
+      .form-section {
+        padding: 1.5rem;
+      }
+}
+
+@media (max-width: 480px) {
+      .image-section {
+        height: auto;
+        min-height: 200px;
+      }
+
+      .form-section {
+        padding: 1rem;
+      }
+}
+
+.addButton {
+  background-color: #000dc7;
+  color: white;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 25px;
+  font-size: 12px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.removeBtn {
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 25px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submitBut{
+  padding: 10px;
+  background-image: linear-gradient(to right, #2999CF, #9A62E8);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-top: 26px;
+}
+
+.addButton:hover {
+  background-color: #050d7e; /* لون أغمق عند التحويم */
+}
+
+label:not(.custom-form label) {
+  display: block;
+  margin-top: 16px;
+  margin-bottom: 6px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+ select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  font-size: 14px;
+  width: 100%;
+}
+
+ select:focus {
+  border-color: #333;
+  outline: none;
+  
+}
+
+input:not(.group input){
+  max-width: 420px;
+  width: 100%;
+  padding: 10px;
+  height: 42px;
+  margin-top: 6px;
+  margin-bottom: 12px;
+  box-sizing: border-box;
+  border: 1px solid rgb(99, 97, 97);
+  border-radius: 50px;
+}
+
+.divider {
+  border: none;
+  height: .5px;
+  background-color: #ccc; /* أو أي لون تريده */
+  width: 80%;
+  margin: 2rem auto; /* وسط الصفحة مع مسافة */
+}
+
+
+h5{
+    margin-top: 28px;
+}
+
+.error {
+  color: red;
+  font-size: 13px;
+  margin-top: 4px;
+  display: none;
+  position: relative;
+}
+
+.custom-form .group input:-webkit-autofill,
+.custom-form .group input:-webkit-autofill:hover,
+.custom-form .group input:-webkit-autofill:focus,
+.custom-form .group input:-webkit-autofill:active {
+    -webkit-text-fill-color: rgb(0, 0, 0) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    transition: background-color 9999s ease-in-out 0s;
+}
+
+.custom-form .group {
+    position: relative;
+    border-radius: 50px;
+    border: 1px solid rgb(99, 97, 97);
+    max-width: 450px;
+    height: 40px;
+    margin-bottom: 24px;
+}
+
+.custom-form .group .floating-label {
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 15px;
+    color: rgb(78, 78, 78);
+    font-size: 16px;
+    pointer-events: none;
+    padding: 0px 5px;
+    transition: 0.3s ease;
+}
+
+.custom-form .group input {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80%;
+    color: rgb(255, 0, 157);
+    background: transparent;
+    outline: none;
+    border: none;
+    padding-left: 20px;
+    border-radius: 50px;
+    font-size: large;
+    box-sizing: border-box;
+}
+
+.custom-form .group:has(input:focus) {
+    border: 1px solid #2196f3;
+}
+
+.custom-form .group input:focus ~ .floating-label {
+    color: #2196f3;
+}
+
+.custom-form .group input:focus ~ .floating-label,
+.custom-form .group:has(input:not(:placeholder-shown)) .floating-label {
+    top: 15px;
+    left: 15px;
+    font-size: 12px;
+}
+
+.custom-form .group.invalid {
+    border: 1px solid red;
+}
+
+.custom-form .group.invalid .floating-label {
+    color: red;
+}
+
+.custom-form .error {
+    position: absolute;
+    bottom: -20px;
+    display: none;
+    color: red;
+    font-size: 0.75rem;
+    padding-inline: 5px;
+}
+
+/* ✅ الموبايل */
+@media (max-width: 479px) {
+  .custom-form .group {
+    height: 40px;
+    border-radius: 30px;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .custom-form .group .floating-label {
+    font-size: 14px;
+    top: 55%;
+    left: 12px;
+  }
+
+  .custom-form .group input {
+    padding-left: 15px;
+    font-size: small;
+  }
+
+  .custom-form .group input:focus ~ .floating-label,
+  .custom-form .group:has(input:not(:placeholder-shown)) .floating-label {
+    top: 10px;
+    font-size: 10px;
+  }
+
+  input:not(.group input), select {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  form {
+    width: 90%;
+    max-width: 100%;
+    margin: auto;
+  }
+}
+
+    
+
+
+/* ✅ التابلت */
+@media (min-width: 480px) and (max-width: 767px) {
+    .custom-form .group {
+        height: 40px;
+        border-radius: 40px;
+        max-width: 90%;
+    }
+
+    .custom-form .group .floating-label {
+        font-size: 12px;
+        top: 52%;
+    }
+
+    .custom-form .group input {
+        padding-left: 18px;
+        font-size:.9em;
+    }
+
+    .custom-form .group input:focus ~ .floating-label,
+    .custom-form .group:has(input:not(:placeholder-shown)) .floating-label {
+        top: 8px;
+        font-size: 10px;
+    }
+}
+
+/* ✅ شاشات الكمبيوتر */
+@media (min-width: 768px) {
+    .custom-form .group {
+        height: 48px;
+        border-radius: 50px;
+        max-width: 450px;
+    }
+
+    .custom-form .group .floating-label {
+        font-size: 16px;
+        top: 50%;
+    }
+
+    .custom-form .group input {
+        font-size: 1em;
+        padding-left: 20px;
+    }
+
+    .custom-form .group input:focus ~ .floating-label,
+    .custom-form .group:has(input:not(:placeholder-shown)) .floating-label {
+        top: 12px;
+        font-size: 12px;
+    }
+}
