@@ -8,11 +8,11 @@ function createInputField(containerId, type, labelText, placeholder, isRequired,
   const fieldId = `${type}${counter}`;
   const errorId = `${fieldId}Error`;
 
-  // إنشاء العناصر من الصفر (بدءًا من الـ parent div)
+
   const fieldWrapper = document.createElement('div');
   fieldWrapper.classList.add('field-entry');
 
-  // 1. إنشاء هيكل الحقل مع عنصر الخطأ
+  
   fieldWrapper.innerHTML = `
     <div class="custom-form">
       <div class="group">
@@ -35,7 +35,6 @@ function createInputField(containerId, type, labelText, placeholder, isRequired,
 
   container.appendChild(fieldWrapper);
 
-  // 2. الحصول على عناصر الـ input والخطأ بعد إضافتها إلى الـ DOM
   const inputEl = document.getElementById(fieldId);
   const errorEl = document.getElementById(errorId);
 
@@ -44,11 +43,11 @@ function createInputField(containerId, type, labelText, placeholder, isRequired,
     return;
   }
 
-  // 3. تفعيل التحقق من الصحة تلقائيًا
+
   inputEl.addEventListener('blur', () => validateField(inputEl, errorEl, labelText));
   inputEl.addEventListener('input', () => validateField(inputEl, errorEl, labelText));
 
-  // 4. إذا كان الحقل من نوع email، نضيف التحقق الإضافي
+ 
   if (type === 'email') {
     inputEl.addEventListener('blur', () => validateEmail(inputEl, errorEl));
     inputEl.addEventListener('input', () => validateEmail(inputEl, errorEl));

@@ -76,7 +76,7 @@
     padding-inline: 5px;
 }
 
-/* ✅ الموبايل */
+
 @media (max-width: 479px) {
     .custom-form .group {
         height: 40px;
@@ -102,7 +102,7 @@
     }
 }
 
-/* ✅ التابلت */
+
 @media (min-width: 480px) and (max-width: 767px) {
     .custom-form .group {
         height: 40px;
@@ -127,7 +127,7 @@
     }
 }
 
-/* ✅ شاشات الكمبيوتر */
+
 @media (min-width: 768px) {
     .custom-form .group {
         height: 48px;
